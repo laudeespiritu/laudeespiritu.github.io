@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link type="text/css" href="./assets/css/style.css" rel="stylesheet">
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar">
     <nav class="navbar navbar-expand-lg navbar-transparent navbar-dark bg-dark py-4">
       <div class="container">
         <div class="brand-container" style="height: 32px; width: 184px;">
@@ -23,33 +23,23 @@
         <button class="navbar-toggler" type="button" data-action="offcanvas-open" data-target="#navbar_main" aria-controls="navbar_main" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!--
         <div class="navbar-collapse offcanvas-collapse" id="navbar_main">
           <ul class="navbar-nav ml-auto align-items-lg-center">
             <h6 class="dropdown-header font-weight-600 d-lg-none px-0">Menu</h6>
-            <li class="nav-item active">
-              <a class="nav-link" href="">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbar_main_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="navbar_1_dropdown_1">
-                <a class="dropdown-item" href="#">Option 1</a>
-                <a class="dropdown-item" href="#">Option 2</a>
-                <a class="dropdown-item" href="#">Option 3</a>
-                <a class="dropdown-item" href="#">Option 4</a>
-                <a class="dropdown-item" href="#">Option 5</a>
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="#section-about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Contact Us</a>
+              <a class="nav-link" href="#section-work">Work Experience</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">About Us</a>
+              <a class="nav-link" href="#section-tech">Tech & Tools</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#section-contact">Contact</a>
             </li>
           </ul>
         </div>
-      -->
       </div>
     </nav>
     <main>
@@ -60,10 +50,10 @@
           <div class="container d-flex align-items-center justify-content-around" id="spotlight-container">
             <div class="row cols-xs-space cols-sm-space cols-md-space align-items-center justify-content-around">
               <div class="col-lg-12 pl-4 pt-5">
-                <h1 class="strong-400 text-white display-3">
+                <h1 id="site-heading" class="text-white">
                   I'm Laude Francois Espiritu <small></small>
                 </h1>
-                <h3 class="text-white mt-4 display-4">
+                <h3 id="site-subheading" class="text-white mt-2">
                   I love making something useful and beautiful for the world to see.
                 </h3>
               </div>
@@ -72,10 +62,10 @@
         </div>
       </section>
       <!-- About Me -->
-      <section class="slice slice-md" data-delimiter="1">
+      <section id="section-about" class="slice slice-md" data-delimiter="1">
         <div class="container">
           <row class="row align-items-center justify-content-around mb-4">
-            <h1>About Me</h1>
+            <h1 class="section-title">About Me</h1>
           </row>
           <div class="row justify-content-around">
             <div class="col-md-6 mb-4">
@@ -84,40 +74,40 @@
           </div>
           <div class="row justify-content-around">
             <div class="col-md-6">
-              <p id="about-content" class="lead text-gray mt-4">Hello there! I'm Laude Francois Espiritu and I do software development with greater enthusiasm for Front end development. After graduating at Ama Computer Learning Center, I got into Yokohama Tire Philippines Inc. and have been part of their MIS Team for over three years. Now, I do software development as a freelancer. Creating products that are useful, great visual design and representations, and with the best user experience is my career goal.</p>
+              <p class="site-content mt-4">Hello there! I'm Laude Francois Espiritu and I do software development and front end design focused on delivering quality user interfaces and experiences. After graduating at AMA Computer Learning Center, I got into Yokohama Tire Philippines Inc. and have been part of their MIS Team for over three years. Now, I do software development as a freelancer. Creating products that are useful, great visual design and representations, and with the best user experience is my career goal.</p>
             </div>
           </div>
         </div>
       </section>
       <!-- Work Experience -->
-      <section class="slice slice-md" data-delimiter="1">
+      <section id="section-work" class="slice slice-md" data-delimiter="1">
         <div class="container">
           <div class="row align-items-center justify-content-around mb-4">
             <div class="col-sm-6 text-center">
-              <h1>Work Experience</h1>
-              <p id="exp-content" class="lead text-gray mt-4">Having more than two years of experience in software development, I still want learning more and grow in this industry.</p>
+              <h1 class="section-title">Work Experience</h1>
+              <p class="site-content mt-4">Having more than two years of experience in software development, I still want learning more and grow in this industry.</p>
             </div>
           </div>
           <div class="row align-items-center justify-content-around mb-4">
             <div class="col-md-10">
               <h2>Junior Software Developer</h2>
               <h3><a href="http://www.ytpi.com/home/">Yokohama Tire Phils. Inc.</a></h3>
-              <p class="lead">June 2017 - September 2020</p>
-              <p>Software design and development using .NET Framework (C# and ASP.NET) and Oracle Database. Conducting technical analysis and planning for client’s software requirements. Creation of project’s software documentations. Providing support for in-house, outsourced, and production related software applications.</p>
+              <p>June 2017 - September 2020</p>
+              <p class="site-content">Software design and development using .NET Framework (C# and ASP.NET) and Oracle Database. Conducting technical analysis and planning for client’s software requirements. Creation of project’s software documentations. Providing support for in-house, outsourced, and production related software applications.</p>
             </div>
           </div>
         </div>
       </section>
       <!-- Technologies -->
-      <section class="slice slice-md" data-delimiter="1">
+      <section id="section-tech" class="slice slice-md" data-delimiter="1">
         <div class="container">
-          <div class="row align-items-center justify-content-around mb-4">
+          <div class="row align-items-center justify-content-around">
             <div class="col-sm-6 text-center">
-              <h1>Technologies I'm working with</h1>
-              <p id="exp-content" class="lead text-gray mt-4">Lists of programming languages, frameworks, libraries, and tools that I have used throughout my career.</p>
+              <h1 class="section-title">Technologies I'm working with</h1>
+              <p class="site-content mt-4">Lists of programming languages, frameworks, libraries, and tools that I have used throughout my career.</p>
             </div>
           </div>
-          <div class="row align-items-center justify-content-around text-center mb-4">
+          <div class="row align-items-center justify-content-around text-center">
             <div class="col-md-8">
               <div class="row align-items-center justify-content-around">
                 <div class="col-sm-3 col-md-4 icons"><img class="img-responsive" src="assets/img/skills/csharp.png"></div>
@@ -133,26 +123,46 @@
           </div>
         </div>
       </section>
-
       <!-- Contant Me -->
-      <section class="slice slice-md" data-delimiter="1">
+      <section id="section-contact" class="slice slice-sm">
         <div class="container">
-          <div class="row align-items-center justify-content-around mb-4">
-            <div class="col-sm-6 text-center">
-              <h1>Reach out!</h1>
-              <p id="exp-content" class="lead text-gray mt-4">Got an idea for a project and you are interested in working with me? Or just want to chat and hangout? Feel free to reach out! I won't bite &#128513;.</p>
+          <div class="row">
+            <div class="col-md-6 py-4">
+              <div class="container">
+                <div class="row align-items-center justify-content-around">
+                  <div class="col-12 text-center">
+                    <h1 class="section-title">See more?</h1>
+                    <p class="site-content mt-4">View my resume and learn more about my professional loadout.</p>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-around">
+                  <a href="resume.pdf" class="btn btn-lg">View Resume</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row align-items-center justify-content-around">
-            <button type="button" class="btn btn-default btn-lg">Say Hi &#9995;</button>
+            <div class="col-md-6 py-4">
+              <div class="row align-items-center justify-content-around">
+                <div class="col-12 text-center">
+                  <h1 class="section-title">Reach out!</h1>
+                  <p class="site-content mt-4">Got an idea for a project and you are interested in working with me? Or just want to chat and hangout? Feel free to reach out! I won't bite &#128513;.</p>
+                </div>
+              </div>
+              <div class="row align-items-center justify-content-around">
+                <!-- <button type="button" class="btn btn-default btn-lg">Say Hi &#9995;</button> -->
+                <a href="mailto:laudeespiritu@gmail.com" class="btn btn-lg" target="_blank">Say Hi &#9995;</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
-      
     </main>
   </body>
     <footer class="pt-5 pb-3 footer footer-dark bg-tertiary">
       <div class="container">
+        <div class="text-center">
+          <button type="button" id="back-to-top" class="btn btn-default btn-sm">Back to Top &#9757;</button>
+        </div>
+        <br />
         <div class="align-items-center">
           <p class="text-center">&copy; Laude François Espiritu</p>
         </div>
@@ -172,5 +182,15 @@
     <script src="./assets/vendor/textarea-autosize/textarea-autosize.min.js"></script>
     <!-- Theme JS -->
     <script src="./assets/js/theme.js"></script>
+
+    <!-- custom -->
+    <script>
+      $(document).ready(function(){
+        $('#back-to-top').on('click', function(){
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+      });
+    </script>
   </body>
 </html>
