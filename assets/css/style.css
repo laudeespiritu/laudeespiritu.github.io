@@ -1,21 +1,27 @@
 :root {
   --nav-height: 80px;
+  --fs-xl: 22px;
+  --fs-lg: 20px;
+  --fs-md: 18px;
+  --fs-sm: 16px;
 }
 
 html {
-  font-size: 1em;
   scroll-behavior: smooth;
 }
 
 body {
+  font-size: var(--fs-md);
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
+  background-color: #fff;
 }
 
 .spotlight-holder {
-  padding-top: calc(1.5rem + 3rem);
-  padding-bottom: 2rem;
+  padding-top: 6rem;
+  padding-bottom: min(2rem, 6rem);
+  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.15);
 }
 
 .navbar {
@@ -36,18 +42,24 @@ body {
 }
 
 #site-heading {
-  /* font-size: clamp(1.5rem, 4vw, 3.5rem); */
+  font-size: clamp(30px, 6vw, 50px);
   margin: 0px;
-  font-size: clamp(2rem, 3.5vw, 3rem);
 }
 
 #site-subheading {
-  font-size: clamp(1.4rem, 1.5vw, 1.5rem);
-  /* font-size: clamp(25px, 6vw, 60px); */
+  font-size: clamp(20px, 5vw, 40px);
 }
 
 .section-title {
-  font-size: 1.75em;
+  font-size: var(--fs-xl);
+}
+
+.title-md {
+  font-size: var(--fs-md);
+}
+
+.title-sm {
+  font-size: var(--fs-sm);
 }
 
 #profile-pic {
@@ -57,7 +69,7 @@ body {
 }
 
 p.site-content {
-  font-size: 1rem;
+  padding: 0 10px;
 }
 
 .icons {
@@ -88,4 +100,34 @@ p.site-content {
   transform: scale(
     1.5
   ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.mockup {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.mockup img:hover {
+  transform: scale(
+    1.2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  z-index: 10;
+}
+
+.img-mockup {
+  width: 100%;
+  height: 100%;
+  max-height: 450px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  body {
+    font-size: var(--fs-sm);
+  }
 }
