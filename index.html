@@ -8,7 +8,6 @@
     <meta name="author" content="Laude Francois Espiritu">
     <title>Laude François Espiritu</title>
     <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Ubuntu|Roboto|Open+Sans" rel="stylesheet">
     <!-- Theme CSS -->
     <link type="text/css" href="./assets/css/theme.css" rel="stylesheet">
@@ -110,6 +109,31 @@
           </section>
           <!-- Mockups -->
           <section id="section-mockup" class="slice slice-md" data-delimiter="1">
+            <div class="img-lightbox">
+              <span class="bdrop__button bdrop__button--close">&times;</span>
+              <div class="img-lightbox-content">
+                <div class="img__slider">
+                  <div class="img__slider-caption">
+                    View on browser: <a href="html/email/templates/account_manage.html" target="_blank">Account Management</a>
+                  </div>
+                  <img class="img__slider-placeholder" src="assets/img/mockups/account_manage_sample01.png" alt="Account Management">
+                </div>
+                <div class="img__slider">
+                  <div class="img__slider-caption">
+                    View on browser: <a href="html/email/templates/newsletter.html" target="_blank">Newsletter</a>
+                  </div>
+                  <img class="img__slider-placeholder" src="assets/img/mockups/newsletter_sample01.png" alt="Newsletter">
+                </div>
+                <div class="img__slider">
+                  <div class="img__slider-caption">
+                    View on browser: <a href="html/email/templates/campus_marketing.html" target="_blank">Marketing Ad</a>
+                  </div>
+                  <img class="img__slider-placeholder" src="assets/img/mockups/campus_marketing_sample01.png" alt="Marketing Ad">
+                </div>
+                <button class="slider__button slider__button--prev">&#10094;</button>
+                <button class="slider__button slider__button--next">&#10095;</button>
+              </div> <!-- img-lightbox-content END -->
+            </div> <!-- img-lightbox END -->
             <div class="container">
               <div class="row justify-content-around">
                 <h1 class="section-title">Mockups</h1>
@@ -124,28 +148,13 @@
               </div>
               <div class="row align-items-center justify-content-around">
                 <div class="col-md-4 mockup py-2">
-                  <img class="img__mockup" src="assets/img/mockups/account_manage_sample01.png">
-                  <div class="img__text">
-                    <p class="img__title">
-                      <a href="html/email/templates/account_manage.html" target="_blank">Account Management</a>
-                    </p>
-                  </div>
+                  <img class="img__mockup" src="assets/img/mockups/account_manage_sample01.png" alt="Account Management" data-current-slide="1">
                 </div>
                 <div class="col-md-4 mockup py-2">
-                  <img class="img__mockup" src="assets/img/mockups/newsletter_sample01.png">
-                  <div class="img__text">
-                    <p class="img__title">
-                      <a href="html/email/templates/newsletter.html" target="_blank">Newsletter</a>
-                    </p>
-                  </div>
+                  <img class="img__mockup" src="assets/img/mockups/newsletter_sample01.png" alt="Newsletter" data-current-slide="2">
                 </div>
                 <div class="col-md-4 mockup py-2">
-                  <img class="img__mockup" src="assets/img/mockups/campus_marketing_sample01.png">
-                  <div class="img__text">
-                    <p class="img__title">
-                      <a href="html/email/templates/campus_marketing.html" target="_blank">Marketing Ad</a>
-                    </p>
-                  </div>
+                  <img class="img__mockup" src="assets/img/mockups/campus_marketing_sample01.png" alt="Marketing Ad" data-current-slide="3">
                 </div>
               </div>
               <div class="row justify-content-around">
@@ -242,9 +251,66 @@
       <!-- Theme JS -->
       <script src="./assets/js/theme.js"></script>
       <script>
+          //Current slider index
+          var sliderIndex = 1;
+
+          //Selecting html body
+          const siteContent = document.querySelector('body');
+
+          function openLightBox(lightBox) {
+            lightBox.style.display = 'block';            
+            siteContent.style.overflow = 'hidden';
+          }
+
+          function closeLightBox(lightBox) {
+            lightBox.style.display = 'none';
+            siteContent.style.overflow = 'auto';
+          }
+
+          function displaySlide(index) {
+            const lightBox = document.querySelector('.img-lightbox');
+            openLightBox(lightBox);
+            const imgSliders = document.querySelectorAll(".img__slider");
+            document.querySelector('.slider__button--prev').style.display = (index == 1) ? 'none' : 'block';
+            document.querySelector('.slider__button--next').style.display = (index == imgSliders.length) ? 'none' : 'block';
+            imgSliders.forEach(slides => {
+              slides.style.display = 'none';
+            });
+            imgSliders[sliderIndex-1].style.display = 'block';
+          }
+
+          //Back to Top function
           document.querySelector('#back-to-top').addEventListener('click', scrollUp = () => {
               document.body.scrollTop = 0; // For Safari
               document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+          });
+
+          //Close the lightbox modal if backdrop is clicked
+          document.querySelector(".img-lightbox").addEventListener('click', (e) => {
+            if (e.target !== e.currentTarget) return
+            closeLightBox(e.currentTarget);
+          });
+          
+          //Open lightbox when image is clicked
+          const imgMockupList = document.querySelectorAll('.img__mockup');
+          imgMockupList.forEach(mockupList => mockupList.addEventListener('click', (e)=> {
+            displaySlide(sliderIndex = parseInt(e.target.getAttribute('data-current-slide')));
+          }));
+
+          //Close lightbox
+          document.querySelector(".bdrop__button--close").addEventListener('click', () => {
+            const lightBox = document.querySelector('.img-lightbox');
+            closeLightBox(lightBox);
+          });
+
+          //Move to previous slide
+          document.querySelector('.slider__button--prev').addEventListener('click', () => {
+            displaySlide(sliderIndex-=1);
+          });
+
+          //Move to next slide
+          document.querySelector('.slider__button--next').addEventListener('click', () => {
+            displaySlide(sliderIndex+=1);
           });
       </script>
   </body>
