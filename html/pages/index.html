@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png">
+        <link rel="stylesheet" href="../../assets/css/bootstrap-4.5.3/bootstrap.min.css">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Roboto|Open+Sans|Montserrat" rel="stylesheet">
+        <title>Laude François</title>
+        <style>
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .navbar {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: .875rem;
+                background-color: unset;
+                color: #fff;
+                z-index: 1100;
+                transition: all ease-in-out .25s;
+            }
+
+            .navbar-header .navbar-brand {
+                color: rgba(255,255,255,1)!important;
+            }
+
+            .navbar-nav .nav-link {
+                color: rgba(255,255,255,.5)!important;
+            }
+
+            .navbar-nav .nav-link:focus,
+            .navbar-nav .nav-link:hover {
+                color: rgba(255,255,255,.75)!important;
+            }
+
+            .navbar-nav .active > .nav-link,
+            .navbar-nav .nav-link.active,
+            .navbar-nav .nav-link.show,
+            .navbar-nav .show > .nav-link {
+                color: rgba(255,255,255,1)!important;
+            }
+
+            @media (max-width: 767px) {
+                .navbar {
+                    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.17)!important;
+                }
+            }
+
+            .navbar--scrolled {
+                background-color: #fff!important;
+                box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.17);
+                transition: all ease-in-out .25s;
+            }
+
+            .navbar--scrolled .navbar-header .navbar-brand {
+                color: rgba(0, 0, 0, 0.938)!important;
+            }
+
+            .navbar--scrolled .navbar-nav .nav-link {
+                color: rgba(34, 34, 34, 0.5)!important;
+            }
+
+            .navbar--scrolled .navbar-nav .nav-link:focus,
+            .navbar--scrolled .navbar-nav .nav-link:hover {
+                color: rgba(0, 0, 0, 0.8)!important;
+            }
+
+            .navbar--scrolled .navbar-nav .active > .nav-link,
+            .navbar--scrolled .navbar-nav .nav-link.active,
+            .navbar--scrolled .navbar-nav .nav-link.show,
+            .navbar--scrolled .navbar-nav .show > .nav-link {
+                color: rgba(0, 0, 0, 0.938)!important;
+            }
+
+            .btn--login {
+                border: 1.5px solid #0047ab;
+                border-radius: 1.758rem;
+            }
+
+            .module-hero {
+                position: relative;
+                background-color: #fff;
+                background-image: url('../../assets/img/pages/pexels-pixabay-414781.jpg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                width: 100%;
+                height: 797.3px;
+                z-index: 0;
+            }
+
+            .caption {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2.5rem;
+                letter-spacing: 0.2em;
+            }
+
+            .entry {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.25rem;
+                /* letter-spacing: 0.2em; */
+            }
+
+            .section--title {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.75rem;
+            }
+
+            .hero-mask::before {
+                /* background: rgba(22, 24, 25, 0.44) none repeat scroll 0 0; */
+                background: rgba(13, 14, 15, 0.44) none repeat scroll 0 0;
+                content: " ";
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+
+            .navbar-nav > li > a {
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+
+            .nav-link {
+                display: block;
+                padding: 10px 15px!important;
+            }
+
+            .cover--heading,
+            .cover--entry {
+                color: #fff;
+            }
+
+            .cover--heading {
+                font-size: 3rem;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 2.5rem;
+            }
+
+            .cover--entry {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.25rem;
+                letter-spacing: 0.2em;
+            }
+
+            @media (max-width: 768px) {
+                .navbar {
+                    background-color: #fff!important;
+                }
+
+                .navbar-header .navbar-brand {
+                    color: rgba(0, 0, 0, 0.938)!important;
+                }
+
+                .navbar-nav .nav-link {
+                    color: rgba(34, 34, 34, 0.5)!important;
+                }
+
+                .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
+                    color: rgba(0, 0, 0, 0.8)!important;
+                }
+
+                .navbar-nav .active > .nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .navbar-nav .show > .nav-link {
+                    color: rgba(0, 0, 0, 0.938)!important;
+                }
+            }
+
+            /* Image Gallery */
+            .img-gallery {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: 
+                    'img__card-1 img__card-2 img__card-3'
+                    'img__card-4 img__card-5 img__card-3'
+                    'img__card-4 img__card-6 img__card-7';
+            }
+
+            .img__card {
+                width: 100%;
+                height: 25rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .img-gallery a::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, .8);
+                opacity: 0;
+                transition: opacity .5s;
+            }
+
+            .img__card:hover a::before {
+                opacity: 1;
+            }
+
+            .img__card-1 {
+                grid-area: img__card-1;
+                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422221.jpg");
+            }
+
+            .img__card-2 {
+                grid-area: img__card-2;
+                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422220.jpg");
+            }
+
+            .img__card-3 {
+                grid-area: img__card-3;
+                background-image: url("../../assets/img/pages/pexels-alex-andrews-1983036.jpg");
+                min-height: 50rem;
+            }
+
+            .img__card-4 {
+                grid-area: img__card-4;
+                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422218.jpg");
+                min-height: 50rem;
+            }
+
+            .img__card-5 {
+                grid-area: img__card-5;
+                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422224.jpg");
+            }
+
+            .img__card-6 {
+                grid-area: img__card-6;
+                background-image: url("../../assets/img/pages/pexels-johannes-plenio-2268843.jpg");
+            }
+
+            .img__card-7 {
+                grid-area: img__card-7;
+                background-image: url("../../assets/img/pages/pexels-alex-andrews-1983038.jpg");
+            }
+
+            @media (max-width: 900px) {
+                .img-gallery {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                        'img__card-1 img__card-3'
+                        'img__card-2 img__card-3'
+                        'img__card-4 img__card-5'
+                        'img__card-4 img__card-6'
+                        'img__card-7 img__card-7';
+                }
+
+                .img__card {
+                    height: 18rem!important;
+                }
+
+                .img__card-3,
+                .img__card-4 {
+                    min-height: 36rem!important;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .img-gallery {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: auto;
+                    grid-template-areas: 
+                        'img__card-1'
+                        'img__card-2'
+                        'img__card-3'
+                        'img__card-4'
+                        'img__card-5'
+                        'img__card-6'
+                        'img__card-7';
+                }
+
+                .img__card {
+                    min-height: 15rem!important;
+                }
+            }
+
+            /* Image Cards */
+            .img__card {
+                position: relative;
+            }
+
+            .img__card--text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #fff;
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 400;
+                opacity: 0;
+                transition: opacity ease-out 250ms;
+            }
+
+            .img__card:hover .img__card--text {
+                opacity: 1;
+            }
+
+            /* Blogs */
+            .img__thumbnail-1,
+            .img__thumbnail-2 {
+                background-repeat: no-repeat;
+                background-position: center center;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                height: 250px;
+                width: 220px;
+            }
+
+            .img__thumbnail-1 {
+                background-image: url('../../assets/img/pages/pexels-matheus-bertelli-2608515.jpg');
+            }
+
+            .img__thumbnail-2 {
+                background-image: url('../../assets/img/pages/pexels-kaique-rocha-105254.jpg');
+            }
+        </style>
+    </head>
+    <body class="mask__bg--dark text-center" data-spy="scroll" data-target=".navbar" data-offset="10">
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top"> -->
+        <nav class="navbar navbar-expand-md navbar-light  fixed-top">
+            <div class="container py-3">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Laude François</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#section-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section-products">Products</a>
+                      </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#section-blog">Blog</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Portfolio</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown">
+                          <a class="dropdown-item" href="#">Blog</a>
+                          <a class="dropdown-item" href="#">Gallery</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Resume</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link btn--login" href="#">Login</a>
+                    </li>
+                  </ul>
+                </div> <!-- navbar-collapse END -->
+            </div> <!-- container END -->
+          </nav>
+          <main>
+              <section id="section-home">
+                <div class="module-hero hero-mask">
+                    <div class="mx-auto" style="position: relative;display: table;height: 100%;">
+                        <div class="text-light" style="display: table-cell;vertical-align: middle;text-align: center;">
+                            <h1 class="display-4 caption">LAUDE FRANÇOIS</h1>
+                            <p class="entry">Photography and Cinematography is not just another hobby, but a never ending passion.</p>
+                            <p class="entry"><a href="https://www.pexels.com/photo/aperture-art-blur-camera-414781/" class="text-light" target="_blank" style="text-decoration: none;">Hero Photo by Pixabay from Pexels</a></p>
+                            </p>
+                        </div>
+                    </div>
+                </div> <!-- module-hero END -->
+              </section> <!-- hero END -->
+              <section id="section-products" class="position-relative p-3 p-md-5 m-md-3">
+                  <div class="row justify-content-center">
+                    <div class="col-md-6 mt-5 mb-4 text-center">
+                        <h1 class="section--title">PRODUCTS</h1>
+                        <p class="lead text-muted">Vintage will always be classic and timeless.</p>
+                    </div>
+                  </div>
+                  <div class="container-fluid">
+                      <!-- <div class="img-gallery">
+                        <a href="" class="img-1"></a>
+                        <a href="" class="img-2"></a>
+                        <a href="" class="img-3"></a>
+                        <a href="" class="img-4"></a>
+                        <a href="" class="img-5"></a>
+                        <a href="" class="img-6"></a>
+                        <a href="" class="img-7"></a>
+                      </div> -->
+                      <div class="img-gallery">
+                        <!-- <div class="img__card img__card-1">
+                            <a href="" target="_blank"><img src="../../assets/img/pages/pexels-free-creative-stuff-1422221.jpg" alt="" width="200" height="200"></a>
+                            <div class="img__card--text">
+                                <h3 class="img__card--title">Image Title</h3>
+                            </div>
+                        </div> -->
+                        <div class="img__card img__card-1">
+                            <a href="https://www.pexels.com/photo/grayscale-photography-of-vintage-camera-lot-1422221/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-2">
+                            <a href="https://www.pexels.com/photo/nine-black-and-gray-cameras-1422220/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-3">
+                            <a href="https://www.pexels.com/photo/assorted-black-cameras-1983036/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-4">
+                            <a href="https://www.pexels.com/photo/grayscale-selective-focus-photography-of-vintage-camera-lot-1422218/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-5">
+                            <a href="https://www.pexels.com/photo/gray-folding-camera-on-white-surface-1422224/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-6">
+                            <a href="https://www.pexels.com/photo/black-and-grey-cameras-2268843/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="img__card img__card-7">
+                            <a href="https://www.pexels.com/photo/assorted-black-and-gray-cameras-1983038/" target="_blank">
+                                <div class="img__card--text">
+                                    <h3 class="img__card--title">Image Title</h3>
+                                </div>
+                            </a>
+                        </div>
+                      </div> <!-- img-gallery END -->
+                  </div> <!-- container-fluid END -->
+              </section> <!-- products END -->
+              <section id="section-blog">
+                  <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 mt-5 mb-4 text-center">
+                            <h1 class="section--title">BLOGS</h1>
+                            <p class="lead text-muted">Experience will never be complete without blogging.</p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-12 text-left">
+                          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                              <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+                              <h3 class="mb-0">Featured post</h3>
+                              <div class="mb-1 text-muted">Nov 23</div>
+                              <p class="mb-auto">21<sup>st</sup> annual Photography Summit held at The Vancouver Convention Center. From hobbyist to the biggest names in photography have gathered around for the biggest photography event every year.</p>
+                              <a href="https://www.pexels.com/photo/group-of-people-standing-beside-table-inside-room-2608515/" target="_blank" class="stretched-link">Continue reading</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block img__thumbnail-1">
+                              <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 text-left">
+                          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                              <!-- <strong class="d-inline-block mb-2 text-success">Design</strong> -->
+                              <h3 class="mb-0">Smartphone Photography</h3>
+                              <div class="mb-1 text-muted">Nov 11</div>
+                              <p class="mb-auto">With smartphones equipped with latest camera technologies, capturing magnificent photos has never been this easy. Let's dive in on how to improve your photography skills and start capturing the best moments like a pro.</p>
+                              <a href="https://www.pexels.com/photo/person-holding-silver-iphone-6-taking-photo-105254/" target="_blank" class="stretched-link">Continue reading</a>
+                            </div>
+                            <div class="col-auto d-none d-lg-block img__thumbnail-2">
+                              <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!-- row END -->
+                  </div> <!-- container END -->
+              </section> <!-- blogs END -->
+              <section>
+                  <div class="container p-4 bg-secondary">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 mt-5 mb-4 text-center">
+                            <h1 class="section--title text-light">SUBSCRIBE</h1>
+                            <p class="lead text-light">Don't miss out! Get the latest news before anyone else. We also give out vouchers and coupons regularly, be the first to enjoy it.</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Enter your email here" aria-label="Subscriber's Email" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                  <!-- <span class="input-group-text" id="basic-addon2">@example.com</span> -->
+                                  <button type="button" class="btn btn-dark">Subscribe</button>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                  </div>
+              </section> <!-- subscribe END -->
+          </main>
+          <footer class="mt-5 pt-5 pb-3 footer bg-dark">
+            <div class="container">
+                <div class="text-center">
+                    <button type="button" id="back-to-top" class="btn btn-secondary btn-md">Back to Top &#9757;</button>
+                </div>
+                <br />
+                <div class="align-items-center">
+                    <p class="text-center text-light">&copy; Laude François Espiritu - 2020</p>
+                </div>
+            </div>
+        </footer>
+          <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+          <script src="../../assets/js/bootstrap-4.5.3/bootstrap.min.js"></script>
+          <script>
+            //Back to Top function
+            document.querySelector('#back-to-top').addEventListener('click', scrollUp = () => {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            });
+
+            //Intersection Observer
+            const navbar = document.querySelector('nav');
+            const sectionOne = document.querySelector('#section-home');
+
+            const sectionOneOptions = {
+                rootMargin: "-200px 0px 0px 0px"
+            };
+
+            const sectionOneObserver = new IntersectionObserver(function(
+                entries, 
+                sectionOneObserver
+            ) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting){
+                        navbar.classList.add('navbar--scrolled');
+                    } else {
+                        navbar.classList.remove('navbar--scrolled');
+                    }
+                });
+            }, sectionOneOptions);
+
+            sectionOneObserver.observe(sectionOne);
+        </script>
+    </body>
+</html>
