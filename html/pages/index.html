@@ -8,505 +8,8 @@
         <link rel="stylesheet" href="../../assets/css/bootstrap-4.5.3/bootstrap.min.css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Ubuntu|Roboto|Open+Sans|Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="custom.css">
         <title>Laude François</title>
-        <style>
-            :root {
-                --fs-xxs: 12px;
-                --fs-xs: 13px;
-                --fs-sm: 14px;
-                --fs-md: 16px;
-                --fs-lg: 18px;
-                --fs-xl: 20px;
-                --fs-xxl: 22px;
-            }
-
-            *,
-            *::before,
-            *::after {
-                box-sizing: border-box;
-            }
-
-            html {
-                scroll-behavior: smooth;
-            }
-
-            body {
-                padding: 0;
-                margin: 0;
-                font-size: var(--fs-md);
-                font-weight: 400;
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 400;
-            }
-
-            .navbar {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400;
-                font-size: .875rem;
-                background-color: unset;
-                color: #fff;
-                z-index: 1100;
-                transition: all ease-in-out .25s;
-            }
-
-            .navbar-header .navbar-brand {
-                color: rgba(255,255,255,1)!important;
-            }
-
-            .navbar-nav .nav-link {
-                color: rgba(255,255,255,.5)!important;
-            }
-
-            .navbar-nav .nav-link:focus,
-            .navbar-nav .nav-link:hover {
-                color: rgba(255,255,255,.75)!important;
-            }
-
-            .navbar-nav .active > .nav-link,
-            .navbar-nav .nav-link.active,
-            .navbar-nav .nav-link.show,
-            .navbar-nav .show > .nav-link {
-                color: rgba(255,255,255,1)!important;
-            }
-
-            @media (max-width: 767px) {
-                .navbar {
-                    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.17)!important;
-                }
-            }
-
-            .navbar--scrolled {
-                background-color: #fff!important;
-                box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.17);
-                transition: all ease-in-out .25s;
-            }
-
-            .navbar--scrolled .navbar-header .navbar-brand {
-                color: rgba(0, 0, 0, 0.938)!important;
-            }
-
-            .navbar--scrolled .navbar-nav .nav-link {
-                color: rgba(34, 34, 34, 0.5)!important;
-            }
-
-            .navbar--scrolled .navbar-nav .nav-link:focus,
-            .navbar--scrolled .navbar-nav .nav-link:hover {
-                color: rgba(0, 0, 0, 0.8)!important;
-            }
-
-            .navbar--scrolled .navbar-nav .active > .nav-link,
-            .navbar--scrolled .navbar-nav .nav-link.active,
-            .navbar--scrolled .navbar-nav .nav-link.show,
-            .navbar--scrolled .navbar-nav .show > .nav-link {
-                color: rgba(0, 0, 0, 0.938)!important;
-            }
-
-            .btn--login {
-                border: 1.5px solid #0047ab;
-                border-radius: 1.758rem;
-            }
-
-            .module-hero {
-                position: relative;
-                background-color: #fff;
-                background-image: url('../../assets/img/pages/pexels-pixabay-414781.jpg');
-                background-repeat: no-repeat;
-                background-position: center center;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                width: 100%;
-                height: 797.3px;
-                z-index: 0;
-            }
-
-            .caption {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 2.5rem;
-                letter-spacing: 0.2em;
-            }
-
-            .entry {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 1.25rem;
-                /* letter-spacing: 0.2em; */
-            }
-
-            .section--title {
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 1.75rem;
-            }
-
-            .hero-mask::before {
-                /* background: rgba(22, 24, 25, 0.44) none repeat scroll 0 0; */
-                background: rgba(13, 14, 15, 0.44) none repeat scroll 0 0;
-                content: " ";
-                height: 100%;
-                left: 0;
-                position: absolute;
-                top: 0;
-                width: 100%;
-            }
-
-            .navbar-nav > li > a {
-                padding-bottom: 20px;
-                padding-top: 20px;
-            }
-
-            .nav-link {
-                display: block;
-                padding: 10px 15px!important;
-            }
-
-            .cover--heading,
-            .cover--entry {
-                color: #fff;
-            }
-
-            .cover--heading {
-                font-size: 3rem;
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 2.5rem;
-            }
-
-            .cover--entry {
-                font-family: 'Open Sans';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 1.25rem;
-                letter-spacing: 0.2em;
-            }
-
-            @media (max-width: 768px) {
-                .navbar {
-                    background-color: #fff!important;
-                }
-
-                .navbar-header .navbar-brand {
-                    color: rgba(0, 0, 0, 0.938)!important;
-                }
-
-                .navbar-nav .nav-link {
-                    color: rgba(34, 34, 34, 0.5)!important;
-                }
-
-                .navbar-nav .nav-link:focus, .navbar-nav .nav-link:hover {
-                    color: rgba(0, 0, 0, 0.8)!important;
-                }
-
-                .navbar-nav .active > .nav-link, .navbar-nav .nav-link.active, .navbar-nav .nav-link.show, .navbar-nav .show > .nav-link {
-                    color: rgba(0, 0, 0, 0.938)!important;
-                }
-            }
-
-            .section--partners {
-                background-color: rgb(242, 242, 242);
-            }
-
-            /* Partners */
-            .partner-gallery {
-                display: grid;
-                /* grid-template-columns: repeat(auto-fit, 100px); */
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                /* grid-template-rows: auto; */
-                grid-template-areas: 'logo-1 logo-2 logo-3 logo-4';
-                /* justify-content: space-evenly; */
-                width: 100%;
-            }
-
-            .partner-logo {
-                width: 5rem;
-                height: 5rem;
-                background-color: transparent;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                justify-self: center;
-            }
-
-            .logo-1 {
-                grid-area: logo-1;
-                align-self: center;
-                background-image: url("../../assets/img/company/company-1.png");
-            }
-
-            .logo-2 {
-                grid-area: logo-2;
-                background-image: url("../../assets/img/company/company-2.png");
-            }
-
-            .logo-3 {
-                grid-area: logo-3;
-                background-image: url("../../assets/img/company/company-3.png");
-            }
-
-            .logo-4 {
-                grid-area: logo-4;
-                background-image: url("../../assets/img/company/company-4.png");
-            }
-
-            /* Image Gallery */
-            .img-gallery {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-template-rows: auto;
-                grid-template-areas: 
-                    'img__card-1 img__card-2 img__card-3'
-                    'img__card-4 img__card-5 img__card-3'
-                    'img__card-4 img__card-6 img__card-7';
-            }
-
-            .img__card {
-                width: 100%;
-                height: 25rem;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .img-gallery a::before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                background-color: rgba(0, 0, 0, .8);
-                opacity: 0;
-                transition: opacity .5s;
-            }
-
-            .img__card:hover a::before {
-                opacity: 1;
-            }
-
-            .img__card-1 {
-                grid-area: img__card-1;
-                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422221.jpg");
-            }
-
-            .img__card-2 {
-                grid-area: img__card-2;
-                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422220.jpg");
-            }
-
-            .img__card-3 {
-                grid-area: img__card-3;
-                background-image: url("../../assets/img/pages/pexels-alex-andrews-1983036.jpg");
-                min-height: 50rem;
-            }
-
-            .img__card-4 {
-                grid-area: img__card-4;
-                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422218.jpg");
-                min-height: 50rem;
-            }
-
-            .img__card-5 {
-                grid-area: img__card-5;
-                background-image: url("../../assets/img/pages/pexels-free-creative-stuff-1422224.jpg");
-            }
-
-            .img__card-6 {
-                grid-area: img__card-6;
-                background-image: url("../../assets/img/pages/pexels-johannes-plenio-2268843.jpg");
-            }
-
-            .img__card-7 {
-                grid-area: img__card-7;
-                background-image: url("../../assets/img/pages/pexels-alex-andrews-1983038.jpg");
-            }
-
-            @media (max-width: 900px) {
-                .img-gallery {
-                    grid-template-columns: 1fr 1fr;
-                    grid-template-rows: auto;
-                    grid-template-areas: 
-                        'img__card-1 img__card-3'
-                        'img__card-2 img__card-3'
-                        'img__card-4 img__card-5'
-                        'img__card-4 img__card-6'
-                        'img__card-7 img__card-7';
-                }
-
-                .img__card {
-                    height: 18rem!important;
-                }
-
-                .img__card-3,
-                .img__card-4 {
-                    min-height: 36rem!important;
-                }
-            }
-
-            @media (max-width: 600px) {
-                .img-gallery {
-                    grid-template-columns: 1fr;
-                    grid-template-rows: auto;
-                    grid-template-areas: 
-                        'img__card-1'
-                        'img__card-2'
-                        'img__card-3'
-                        'img__card-4'
-                        'img__card-5'
-                        'img__card-6'
-                        'img__card-7';
-                }
-
-                .img__card {
-                    min-height: 15rem!important;
-                }
-            }
-
-            /* Image Cards */
-            .img__card {
-                position: relative;
-            }
-
-            .img__card--text {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                color: #fff;
-                font-family: 'Montserrat';
-                font-style: normal;
-                font-weight: 400;
-                opacity: 0;
-                transition: opacity ease-out 250ms;
-            }
-
-            .img__card:hover .img__card--text {
-                opacity: 1;
-            }
-
-            /* Blogs */
-            .img__thumbnail-1,
-            .img__thumbnail-2 {
-                background-repeat: no-repeat;
-                background-position: center center;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                height: 250px;
-                width: 220px;
-            }
-
-            .img__thumbnail-1 {
-                background-image: url('../../assets/img/pages/pexels-matheus-bertelli-2608515.jpg');
-            }
-
-            .img__thumbnail-2 {
-                background-image: url('../../assets/img/pages/pexels-kaique-rocha-105254.jpg');
-            }
-
-            /* Cards */
-            .card-thumbnail {
-                height: 225px;
-                width: 100%;
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-
-            .card-thumbnail-1 {
-                background-image: url('../../assets/img/pages/pexels-josh-hild-4424567.jpg');
-                background-position: center;
-            }
-
-            .card-thumbnail-2 {
-                background-image: url('../../assets/img/pages/pexels-taryn-elliott-4652275.jpg');
-                background-position: center;
-            }
-
-            .card-thumbnail-3 {
-                background-image: url('../../assets/img/pages/pexels-pixabay-462030.jpg');
-                background-position: bottom;
-            }
-
-            .card-thumbnail-4 {
-                background-image: url('../../assets/img/pages/pexels-josh-hild-3602154.jpg');
-                background-position: center;
-            }
-
-            .card-thumbnail-5 {
-                background-image: url('../../assets/img/pages/pexels-matheus-bertelli-3321796.jpg');
-                background-position: center;
-            }
-
-            .card-thumbnail-6 {
-                background-image: url('../../assets/img/pages/pexels-tobias-bjørkli-1693095.jpg');
-                background-position: center;
-            }
-
-            .author-thumbnail {
-                height: 45px;
-                width: 45px;
-                background-repeat: no-repeat;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.28);
-                border-radius: 50%;
-            }
-
-            .author-thumbnail-1 {
-                background-image: url('../../assets/img/pages/ryan-kwok-89HpG8WXS0M-unsplash.jpg');
-                background-position: center;
-            }
-
-            .author-thumbnail-2 {
-                background-image: url('../../assets/img/pages/ben-parker-OhKElOkQ3RE-unsplash.jpg');
-                background-position: center;
-            }
-
-            .author-thumbnail-3 {
-                background-image: url('../../assets/img/pages/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg');
-                background-position: top;
-            }
-
-            .author-thumbnail-4 {
-                background-image: url('../../assets/img/pages/ryan-hoffman-Ft4p5E9HjTQ-unsplash.jpg');
-                background-position: top;
-            }
-
-            .author-thumbnail-5 {
-                background-image: url('../../assets/img/pages/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg');
-                background-position: top;
-            }
-
-            .author-thumbnail-6 {
-                background-image: url('../../assets/img/pages/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash.jpg');
-                background-position: top;
-            }
-
-            .author-name {
-                color: rgba(9, 93, 210, 0.83);
-            }
-        </style>
     </head>
     <body class="mask__bg--dark text-center" data-spy="scroll" data-target=".navbar" data-offset="10">
         <nav class="navbar navbar-expand-md navbar-light  fixed-top">
@@ -629,6 +132,110 @@
                     </div>
                   </div>
               </section>
+              <section id="section-slider" class="position-relative p-3 p-md-5 m-md-3">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 mt-5 mb-4 text-center">
+                            <h1 class="section--title">SUBMISSIONS</h1>
+                            <p class="text-muted">Here are some of our favorite shots from the monthly submissions of our subscribers.</p>
+                        </div>
+                    </div> <!-- row END -->
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <div id="myCarousel" class="carousel slide p-sm-3" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner text-center">
+                                    <div class="carousel-item active">
+                                        <div class="col-12">
+                                            <div class="card mb-4 shadow-sm">
+                                                <!-- <div class="card-thumbnail card-thumbnail-4"></div> -->
+                                                <a href="https://www.pexels.com/photo/red-cardinal-bird-on-tree-branch-905248/" target="_blank">
+                                                    <img src="../../assets/img/pages/pexels-harvey-reed-905248.jpg" alt="" style="height: 400px; width: 100%;">
+                                                </a>
+                                                <div class="card-body">
+                                                    <div class="card-author d-flex">
+                                                        <div class="author-id d-flex flex-column text-left">
+                                                            <small class="author-name font-weight-bold">Red Cardinal Bird on Tree Branch</small>
+                                                            <small class="text-muted">Harvey Reed</small>
+                                                        </div>
+                                                    </div> <!-- card author END -->
+                                                </div> <!-- card body END -->
+                                            </div> <!-- card END -->
+                                        </div> <!-- col END -->
+                                    </div> <!-- carousel-item END -->
+                                    <div class="carousel-item">
+                                        <div class="col-12">
+                                            <div class="card mb-4 shadow-sm">
+                                                <!-- <div class="card-thumbnail card-thumbnail-4"></div> -->
+                                                <a href="https://www.pexels.com/photo/brown-and-green-mountain-view-photo-842711/" target="_blank">
+                                                    <img src="../../assets/img/pages/pexels-christian-heitz-842711.jpg" alt="" style="height: 400px; width: 100%;">
+                                                </a>
+                                                <div class="card-body">
+                                                    <div class="card-author d-flex">
+                                                        <div class="author-id d-flex flex-column text-left">
+                                                            <small class="author-name font-weight-bold">Brown and Green Mountain View Photo</small>
+                                                            <small class="text-muted">Christian Heitz</small>
+                                                        </div>
+                                                    </div> <!-- card author END -->
+                                                </div> <!-- card body END -->
+                                            </div> <!-- card END -->
+                                        </div> <!-- col END -->
+                                    </div> <!-- carousel-item END -->
+                                    <div class="carousel-item">
+                                        <div class="col-12">
+                                            <div class="card mb-4 shadow-sm">
+                                                <!-- <div class="card-thumbnail card-thumbnail-4"></div> -->
+                                                <a href="https://www.pexels.com/photo/architecture-bridge-building-city-220769/" target="_blank">
+                                                    <img src="../../assets/img/pages/pexels-pixabay-220769.jpg" alt="" style="height: 400px; width: 100%;">
+                                                </a>
+                                                <div class="card-body">
+                                                    <div class="card-author d-flex">
+                                                        <div class="author-id d-flex flex-column text-left">
+                                                            <small class="author-name font-weight-bold">Purple Foot Bridge</small>
+                                                            <small class="text-muted">Pixabay</small>
+                                                        </div>
+                                                    </div> <!-- card author END -->
+                                                </div> <!-- card body END -->
+                                            </div> <!-- card END -->
+                                        </div> <!-- col END -->
+                                    </div> <!-- carousel-item END -->
+                                    <div class="carousel-item">
+                                        <div class="col-12">
+                                            <div class="card mb-4 shadow-sm">
+                                                <!-- <div class="card-thumbnail card-thumbnail-4"></div> -->
+                                                <a href="https://www.pexels.com/photo/side-view-of-woman-in-illuminated-city-at-night-315191/" target="_blank">
+                                                    <img src="../../assets/img/pages/pexels-pixabay-315191.jpg" alt="" style="height: 400px; width: 100%;">
+                                                </a>
+                                                <div class="card-body">
+                                                    <div class="card-author d-flex">
+                                                        <div class="author-id d-flex flex-column text-left">
+                                                            <small class="author-name font-weight-bold">Side View of Woman in Illuminated City at Night</small>
+                                                            <small class="text-muted">Pixabay</small>
+                                                        </div>
+                                                    </div> <!-- card author END -->
+                                                </div> <!-- card body END -->
+                                            </div> <!-- card END -->
+                                        </div> <!-- col END -->
+                                    </div> <!-- carousel-item END -->
+                                </div>
+                                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div> <!-- myCarousel END -->
+                        </div>
+                    </div> <!-- row END -->
+                  </div> <!-- container END -->
+              </section>
               <section id="section-blog" class="position-relative p-3 p-md-5 m-md-3">
                   <div class="container">
                     <div class="row justify-content-center">
@@ -666,11 +273,15 @@
                       <div class="row text-left">
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-1"></div>
+                                <div class="card-thumbnail">
+                                    <a href="https://www.pexels.com/photo/person-holding-black-dslr-camera-taking-photo-of-city-lights-during-night-time-4424567/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-josh-hild-4424567.jpg" alt="" class="card-thumbnail-1">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">INSIGHTS</small>
                                     <p class="card-text font-weight-bold">Different styles and techniques in photography</p>
-                                    <a href="#" class="stretched-link"></a>
+                                    <!-- <a href="#" class="stretched-link"></a> -->
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-1 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -683,11 +294,14 @@
                         </div> <!-- col END -->
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-2"></div>
+                                <div class="card-thumbnail">
+                                    <a href="https://www.pexels.com/photo/photo-of-person-standing-on-green-grass-field-4652275/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-taryn-elliott-4652275.jpg" alt="" class="card-thumbnail-2">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">INSIGHTS</small>
                                     <p class="card-text font-weight-bold">Nature photography: Perspective and Patience is the key</p>
-                                    <a href="#" class="stretched-link"></a>
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-2 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -700,11 +314,14 @@
                         </div> <!-- col END -->
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-3"></div>
+                                <div class="card-thumbnail">                                
+                                    <a href="https://www.pexels.com/photo/beach-blur-clouds-dawn-462030/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-pixabay-462030.jpg" alt="" class="card-thumbnail-3">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">GUIDE</small>
                                     <p class="card-text font-weight-bold">Color: Improving your captures by dialing the right colors</p>
-                                    <a href="#" class="stretched-link"></a>
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-3 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -717,11 +334,14 @@
                         </div> <!-- col END -->
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-4"></div>
+                                <div class="card-thumbnail">
+                                    <a href="https://www.pexels.com/photo/cars-on-road-between-high-rise-buildings-during-night-time-3602154/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-josh-hild-3602154.jpg" alt="" class="card-thumbnail-4">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">INSIGHTS</small>
                                     <p class="card-text font-weight-bold">Using reflections to create interesting echoes</p>
-                                    <a href="#" class="stretched-link"></a>
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-4 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -734,11 +354,14 @@
                         </div> <!-- col END -->
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-5"></div>
+                                <div class="card-thumbnail">
+                                    <a href="https://www.pexels.com/photo/photo-of-man-sitting-in-front-3321796/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-matheus-bertelli-3321796.jpg" alt="" class="card-thumbnail-5">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">EVENTS</small>
                                     <p class="card-text font-weight-bold">PhotoCon: Latest news and announcements</p>
-                                    <a href="#" class="stretched-link"></a>
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-5 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -751,11 +374,14 @@
                         </div> <!-- col END -->
                         <div class="col-md-4">
                             <div class="card mb-4 shadow-sm">
-                                <div class="card-thumbnail card-thumbnail-6"></div>
+                                <div class="card-thumbnail">
+                                    <a href="https://www.pexels.com/photo/aurora-lights-1693095/" target="_blank">
+                                        <img src="../../assets/img/pages/pexels-tobias-bjørkli-1693095.jpg" alt="" class="card-thumbnail-6">
+                                    </a>
+                                </div>
                                 <div class="card-body">
                                     <small class="font-weight-bold text-muted">NEWS</small>
                                     <p class="card-text font-weight-bold">Northern Lights: Stunning view coming up this month</p>
-                                    <a href="#" class="stretched-link"></a>
                                     <div class="card-author d-flex">
                                         <div class="author-thumbnail author-thumbnail-6 mr-2"></div>
                                         <div class="author-id d-flex flex-column">
@@ -769,6 +395,42 @@
                       </div> <!-- row END -->
                   </div> <!-- container END -->
               </section> <!-- blogs END -->
+              <section id="section-testimonial" class="position-relative p-3 p-md-5 m-md-3">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 mt-5 mb-4 text-center">
+                            <h1 class="section--title">TESTIMONIALS</h1>
+                            <p class="text-muted">Feedback from our clients and communities alike.</p>
+                        </div>
+                    </div> <!-- row END -->
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text font-weight-bold"><q>We've seen amazing results already. Definitely knows their audience and platform!</q></p>
+                                    <p>- Zachery Y.</p>
+                                </div> <!-- card body END -->
+                            </div> <!-- card END -->
+                        </div> <!-- col END -->
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text font-weight-bold"><q>Been learning more about photography ever since I subbed. Keep getting more awesome guys.</q></p>
+                                    <p>- John D.</p>
+                                </div> <!-- card body END -->
+                            </div> <!-- card END -->
+                        </div> <!-- col END -->
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <p class="card-text font-weight-bold"><q>The community has helped me find and renew my passion for photography.</q></p>
+                                    <p>- Liza E.</p>
+                                </div> <!-- card body END -->
+                            </div> <!-- card END -->
+                        </div> <!-- col END -->
+                    </div>
+                </div>
+              </section>
               <section id="section-pricing" class="position-relative p-3 p-md-5 m-md-3">
                 <div class="container">
                     <div class="row justify-content-center">
@@ -899,8 +561,8 @@
                     </div> <!-- card-deck END -->
                   </div> <!-- container END -->
               </section> <!-- pricing END -->
-              <section>
-                  <div class="container p-4 bg-secondary">
+              <section class="bg-secondary">
+                  <div class="container p-4">
                     <div class="row justify-content-center">
                         <div class="col-md-8 mt-5 mb-4 text-center">
                             <h1 class="section--title text-light">SUBSCRIBE</h1>
@@ -920,7 +582,7 @@
                   </div>
               </section> <!-- subscribe END -->
           </main>
-          <footer class="mt-5 pt-5 pb-3 footer bg-dark">
+          <footer class="pt-5 pb-3 footer bg-dark">
             <div class="container">
                 <div class="text-center">
                     <button type="button" id="back-to-top" class="btn btn-secondary btn-md">Back to Top &#9757;</button>
