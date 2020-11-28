@@ -532,3 +532,94 @@ body {
   height: 12px;
   width: 12px;
 }
+
+/* Tab Menu */
+.tab-menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  border-radius: 0.25rem;
+  background-color: #fff;
+}
+
+.tab-header {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid rgba(184, 183, 183, 0.733);
+  /* padding: 1rem 0; */
+  list-style: none;
+  display: -webkit-flex;
+  width: 100%;
+  /* background-color: red; */
+  justify-content: space-between;
+  -o-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.tab-item {
+  width: 100%;
+  /* padding: 1rem 2rem; */
+}
+
+.tab-border {
+  border-right: 1px solid rgba(184, 183, 183, 0.733);
+}
+
+.tab-body {
+  padding: 2.25rem;
+}
+
+.tab-heading {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+.tab-item a {
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: rgba(34, 34, 34, 0.5);
+}
+
+.tab-item.active {
+  background-color: rgba(13, 14, 15, 0.44);
+}
+
+.tab-item.active .tab-btn {
+  color: rgba(243, 243, 243, 0.8) !important;
+}
+
+.tab-item:hover {
+  background-color: rgba(13, 14, 15, 0.44);
+}
+
+.tab-item:hover .tab-btn {
+  color: rgba(243, 243, 243, 0.8) !important;
+}
+
+.tab-btn {
+  padding: 1rem 2rem;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  font-family: "Montserrat";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .tab-menu {
+    display: none !important;
+  }
+
+  .accordion {
+    display: block !important;
+  }
+}
