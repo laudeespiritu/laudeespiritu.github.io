@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge" >
+        <title>Fixed Navbar</title>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu|Roboto|Open+Sans|Montserrat" rel="stylesheet">
+        <style>
+            :root {
+                --fs-xl: 22px;
+                --fs-lg: 20px;
+                --fs-md: 18px;
+                --fs-sm: 16px;
+                --fs-nav: 0.87rem;
+                --navbar-height: 80px;
+                --sidebar-width: 300px;
+                --mx-width-sm: 550px;
+                --mx-width-md: 720px;
+                --mx-width-lg: 960px;
+                --mx-width-xl: 1150px;
+                --border-radius: 4px;
+                --burger-width: 40px;
+                --burger-layer-width: 35px;
+                --bg-white: #fff;
+                --bg-dark: #181c25;
+                --bg-blue: #206dd9;
+                --text-white: #fff;
+                --text-dark: #515d73;
+                
+
+                --green: #64ffda;
+                --ham-before: top 0.1s ease-in 0.25s,opacity 0.1s ease-in;
+                --ham-after: bottom 0.1s ease-in 0.25s,transform 0.22s cubic-bezier(0.55,0.055,0.675,0.19);
+            }
+
+            html, body {
+                font-family: 'Open Sans';
+                font-style: normal;
+            }
+
+            *, 
+            *::before, 
+            *::after {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .vessel {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: center;
+                align-items: center;   
+            }
+
+            @media (min-width: 600px) {
+                .vessel {
+                    max-width: var(--mx-width-sm);
+                }
+            }
+
+            @media (min-width: 768px) {
+                .vessel {
+                    max-width: var(--mx-width-md);
+                }
+            }
+
+            @media (min-width: 992px) {
+                .vessel {
+                    max-width: var(--mx-width-lg);
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .vessel {
+                    max-width: var(--mx-width-xl);
+                }
+            }
+
+            /* Navbar */
+            .navbar {  
+                position: fixed;
+                display: flex;
+                font-family: 'Montserrat';
+                font-style: normal;
+                -webkit-align-items: center;
+                align-items: center;
+                height: var(--navbar-height);
+                background-color: var(--bg-white);
+                width: 100%;
+                -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                z-index: 10;
+            }
+
+            .navbar__logo {
+                font-size: var(--fs-md);
+                justify-content: space-around;
+            }
+
+            .navbar__logo a {
+                text-decoration: none;
+                color: var(--text-dark);
+            }
+
+            .navbar__links {
+                position: relative;
+                display: flex;
+                -webkit-align-items: center;
+                align-items: center;
+            }
+
+            .navbar__menu {
+                list-style: none;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                font-size: var(--fs-nav);
+                -webkit-justify-content: space-between;
+                -moz-justify-content: space-between;
+                justify-content: space-between;
+                -webkit-align-items: center;
+                align-items: center;
+                margin-top: 1.2rem;
+            }
+
+            .navbar__menu li {
+                margin: 0px 5px;
+            }
+
+            .navbar__item {
+                text-decoration: none;
+                color: var(--text-dark);
+                padding: 0.75rem 1rem;
+                border-radius: var(--border-radius);
+                transition: .25s ease-in-out;
+            }
+
+            .navbar__item:hover, .nav-dropdown__item:hover {
+                background-color: var(--bg-blue);
+                color: var(--text-white);
+                transition: .25s ease-in;
+            }
+
+            .nav-dropdown {
+                position: absolute;
+                display: none;
+                color: var(--text-dark);
+                background-color: var(--bg-white);
+                transform: translate(0%, 14%);
+                text-align: left;
+                padding: 5px 0px;
+                min-width: 10rem;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
+                z-index: 11;
+            }
+
+            .nav-dropdown.unveil {
+                display: block;
+            }
+
+            .nav-dropdown__item {
+                display: block;
+                color: var(--text-dark);
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                font-size: .78rem;
+            }
+
+            .nav-dropdown__divider, .side-dropdown__divider {
+                height: 0;
+                margin: .5rem 0;
+                overflow: hidden;
+                border-top: 1px solid #e9ecef;
+            }
+
+            /* Sidebar */
+            .sidebar {
+                display: flex;
+                position: fixed;
+                width: 100%;
+                max-width: var(--sidebar-width);
+                height: 100%;
+                padding: 1.5rem;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background-color: var(--bg-white);
+                -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+                -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+                box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.15);
+                z-index: 12;
+                transform: translateX(100vw);
+                visibility: hidden;
+                transition: all 0.25s ease-in-out;
+            }
+
+            .sidebar.unveil {
+                transform: translateX(0vw);
+                visibility: visible;
+            }
+
+            .sidebar__menu {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 1rem;
+                margin: 0;
+                text-align: center;
+                font-size: var(--fs-nav);
+            }
+
+            .sidebar__menu li {
+                margin-bottom: .78rem;
+            }
+
+            .sidebar__item {
+                text-decoration: none;
+                display: block;
+                line-height: 2.5rem;
+                color: var(--text-dark);
+                border-radius: var(--border-radius);
+                transition: .25s ease-in-out;
+            }
+
+            .sidebar__item:hover, .side-dropdown__item:hover {
+                background-color: var(--bg-blue);
+                color: var(--text-white);
+                transition: .25s ease-in;
+            }
+
+            .side-dropdown {
+                margin-top: 5px;
+            }
+
+            .side-dropdown__item {
+                text-decoration: none;
+                display: block;
+                line-height: 2rem;
+                color: var(--text-dark);
+                font-size: calc(var(--fs-nav) - .1rem);
+                border-radius: var(--border-radius);
+                transition: .25s ease-in-out;
+            }
+
+            /* Page content */
+            .content {
+                height: 150vh;
+                display: grid;
+                place-items: center;
+                background-color: teal;
+            }
+
+
+
+            /* Hamburger Menu */
+            .sidebar__toggle {
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                position: relative;
+                /* z-index: 10; */
+                margin-right: -15px;
+                padding: 15px;
+                border: 0px;
+                background-color: transparent;
+                color: inherit;
+                text-transform: none;
+                /* transition-timing-function: linear;
+                transition-duration: 0.15s;
+                transition-property: opacity, filter; */
+            }
+
+            .ham-box {
+                display: inline-block;
+                position: relative;
+                width: var(--burger-width);
+                height: 24px;
+            }
+
+            .ham-box-inner {
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                width: var(--burger-width);
+                height: 2px;
+                border-radius: var(--border-radius);
+                background-color: var(--green);
+                transition: transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0s;
+                transform: rotate(0deg);
+            }
+
+            .ham-box-inner::before, .ham-box-inner::after {
+                content: "";
+                display: block;
+                position: absolute;
+                left: auto;
+                right: 0px;
+                width: var(--burger-width);
+                height: 2px;
+                border-radius: var(--border-radius);
+                background-color: var(--green);
+                transition-timing-function: ease;
+                transition-duration: 0.15s;
+                transition-property: transform;
+            }
+
+            .ham-box-inner::before {
+                width: 120%;
+                top: -10px;
+                opacity: 1;
+                transition: var(--ham-before);
+            }
+
+            .ham-box-inner::after {
+                width: 80%;
+                bottom: -10px;
+                transform: rotate(0deg);
+                transition: var(--ham-after);
+            }
+
+            .burger {
+                display: flex;
+                position: relative;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-align-items: center;
+                align-items: center;
+                padding: 15px;
+                border: 0;
+                background-color: transparent;
+            }
+
+            .burger:hover {
+                cursor: pointer;
+            }
+
+            .burger__layer {
+                display: inline-block;
+                position: relative;
+                width: var(--burger-layer-width);
+                height: 25px;
+            }
+
+            .burger__layer--inner {
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: var(--burger-layer-width);
+                height: 2px;
+                background-color: var(--bg-blue);
+                border-radius: var(--border-radius);
+            }
+
+            .burger__layer--inner::before, 
+            .burger__layer--inner::after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: var(--burger-layer-width);
+                height: 2px;
+                background-color: var(--bg-blue);
+                border-radius: var(--border-radius);
+            }
+
+            .burger__layer--inner::before {
+                top: -10px;
+            }
+
+            .burger__layer--inner::after {
+                bottom: -10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="vessel">
+                    <div class="navbar__logo">
+                        <a href="#">Fixed Navbar</a>
+                    </div>
+                    <div class="navbar__links">
+                        <ul class="navbar__menu">
+                            <li><a class="navbar__item" href="#">Home</a></li>
+                            <li><a class="navbar__item" href="#">About</a></li>
+                            <li><a class="navbar__item" href="#">Pricing</a></li>
+                            <li>
+                                <a id="dropdown" class="navbar__item" href="#" data-toggle="dropdown">Support</a>
+                                <div class="nav-dropdown">
+                                    <a class="nav-dropdown__item" href="#">Field Service</a>
+                                    <a class="nav-dropdown__item" href="#">Tech Support</a>
+                                    <div class="nav-dropdown__divider"></div>
+                                    <a class="nav-dropdown__item" href="#">Create Ticket</a>
+                                </div>
+                            </li>
+                            <li><a class="navbar__item" href="#">Contact</a></li>
+                        </ul>
+                        <!-- <button class="sidebar__toggle" type="button"><div class="ham-box"><div class="ham-box-inner"></div></div></button> -->
+                        <button class="burger"><div class="burger__layer"><div class="burger__layer--inner"></div></div></button> <!-- burger icon -->
+                        <aside>
+                            <div class="sidebar">
+                                <ul class="sidebar__menu">
+                                    <li><a class="sidebar__item" href="#">Home</a></li>
+                                    <li><a class="sidebar__item" href="#">About</a></li>
+                                    <li><a class="sidebar__item" href="#">Pricing</a></li>
+                                    <li>
+                                        <a class="sidebar__item" href="#" data-toggle="dropdown">Support</a>
+                                        <div class="side-dropdown">
+                                            <a class="side-dropdown__item" href="#">Field Service</a>
+                                            <a class="side-dropdown__item" href="#">Tech Support</a>
+                                            <div class="side-dropdown__divider"></div>
+                                            <a class="side-dropdown__item" href="#">Create Ticket</a>
+                                        </div>
+                                    </li>
+                                    <li><a class="sidebar__item" href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="content">Content Here</div>
+          </main>
+    </body>
+    <script>
+        // document.addEventListener('click', (e) => {
+        //     console.log(e.target);
+        // });
+
+        document.querySelector('#dropdown').addEventListener('click', (e) => {
+            document.querySelector('.nav-dropdown').classList.toggle('unveil');
+        });
+
+        document.querySelector('.burger').addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('unveil');
+        });
+    </script>
+</html>

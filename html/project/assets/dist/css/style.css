@@ -1,0 +1,241 @@
+.bg-green {
+  background-color: #246c4d;
+}
+
+.text-green {
+  color: #246c4d;
+}
+
+.bg-grey {
+  background-color: #d3d4d3;
+}
+
+.navbar li:hover,
+.sub-menu-search:hover {
+  background-color: rgb(38, 85, 65) !important;
+}
+
+.sub-menu {
+  color: #909090;
+  font-size: 1.45rem;
+  padding-left: 100px;
+}
+
+.sub-menu-item li {
+  padding: 0.89rem 1rem;
+}
+
+.sub-menu-item li:hover {
+  background-color: rgb(158, 158, 158);
+}
+
+.sub-menu-item a {
+  color: rgba(41, 41, 41, 0.5);
+}
+
+.sub-menu-item li.active a {
+  color: #246c4d;
+}
+
+.sub-menu-search {
+  background-color: #246c4d;
+}
+
+.sub-menu-search a {
+  color: #fff;
+}
+
+.project-list {
+  background-color: transparent;
+}
+
+.sidebar {
+  height: 100%;
+  width: 85px;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  background-color: #111;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width cubic-bezier(0.075, 0.82, 0.165, 1) 250ms;
+}
+
+.sidebar:hover {
+  width: 280px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-top: 0.75rem;
+  padding-left: 1rem;
+}
+
+.sidebar li:hover {
+  background-color: rgba(54, 54, 54, 0.5);
+}
+
+.sidebar a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: #818181;
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Page Content */
+.content {
+  padding-top: 1.23rem;
+  padding-left: 100px;
+}
+
+.modal {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+/* Overlay Form */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.project-form {
+  display: none;
+  position: absolute;
+  border: 1px solid rgba(41, 41, 41, 0.5);
+  background-color: #fff;
+  padding: 1.45rem;
+  height: 92vh;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  /* transition: all ease-in-out 1000ms; */
+}
+
+.project-form form {
+  width: 350px;
+  height: auto;
+  padding: 0.25rem;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.project-form form label {
+  font-weight: 600;
+}
+
+.form-container {
+  flex-flow: column;
+  height: 95%;
+}
+
+.form-row {
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  padding: 2rem 0.5rem;
+}
+
+.btn-form-close {
+  position: absolute;
+  height: 2.5rem;
+  width: 3rem;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-100%);
+  color: #fff;
+  background-color: #246c4d;
+  border: 2px solid #246c4d;
+}
+
+.btn-form-close span {
+  font-size: 1.5rem;
+}
+
+.btn-select,
+.btn-submit {
+  background-color: transparent;
+  border: 2px solid #246c4d;
+  padding: 0.25rem 1.25rem;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+/* Overlay*/
+#overlay_wrapper {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1051;
+}
+
+#overlay_text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 35px;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#overlay_spinner {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  font-size: 22px;
+}
+
+/* Datepicker */
+.input-icons span {
+  position: absolute;
+  right: 0;
+}
+
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
+
+/* Tag inputs */
+.tagify {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .border-left {
+    border-left: none !important;
+  }
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --bg-color: #333;
+        --ft-color: #f2f2f2;
+        --ft-size: 1em;
+        --nav-height: 85px;
+        --box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1), 0 17px 50px rgba(0, 0, 0, 0.1);
+        --transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+      }
+
+      *, ::before, ::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: 'Work Sans', sans-serif;
+      }
+
+      /* Custom classes */
+      .container {
+        width: 100%;
+        padding-right: 25px;
+        padding-left: 25px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .justify-space-between {
+        justify-content: space-between;
+      }
+
+      .display-flex {
+        display: flex;
+      }
+
+      /*  Top Navigation Bar - Fixed */
+      .site-header {
+        background-color: var(--bg-color);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        padding: 0px 60px;
+        box-shadow: var(--box-shadow);
+      }
+
+      .navbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: var(--nav-height);
+        width: 100%;
+        /* padding-right: 25px;
+        padding-left: 25px;
+        margin-right: auto;
+        margin-left: auto; */
+      }
+
+      .navbar-logo {
+        display: flex;
+        align-items: center;
+        font-size: calc(var(--ft-size) + .5rem);
+        color: var(--ft-color);
+      }
+
+      .navbar-menu {
+        display: flex;
+        align-items: center;
+      }
+
+      .menu-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu-item {
+        margin: 0px 10px;
+      }
+
+      .menu-item a {
+        text-decoration: none;
+        color: var(--ft-color);
+      }
+
+      .navbar-toggle {
+        display: none;
+      }
+
+      .toggle-button {
+        padding: 0.25rem 0.75rem;
+        background-color: var(--bg-color);
+        border-color: #3498db;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+
+      .hamburger {
+        background-color: #3498db;
+        margin: .45rem 0px;
+      }
+
+      .hamburger-l {
+        height: 3px;
+        width: 2rem;
+      }
+
+      .hamburger-s {
+        height: 3px;
+        width: 1.5rem;
+        margin-left: auto;
+      }
+
+      /* Sidebar - Right Fixed */
+      .sidebar {
+        display: none;
+      }
+
+      .sidebar nav {
+        position: relative;
+        display: flex;
+        width: 100%;
+      }
+
+      .sidebar-menu {
+        display: flex;
+        width: 100%;
+        padding: 50px 20px;
+      }
+
+      .sidebar-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        font-size: .75rem;
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+      }
+
+      .sidebar-item {
+        padding: 15px 5px;
+      }
+
+      .sidebar-item a {
+        text-decoration: none;
+        color: var(--ft-color);
+        font-size: calc(var(--ft-size) + .5rem);
+      }
+
+      /* Page content */
+
+      .content {
+        height: 150vh;
+        display: grid;
+        place-items: center;
+      }
+
+
+      /*** Media Queries ***/
+      /* Top Navbar */
+      @media (max-width: 1080px) {
+        .site-header {
+          padding: 0px 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .site-header {
+          padding: 0px 25px;
+          transition: width 2s;
+        }
+
+        .navbar-menu {
+          display: none;
+        }
+
+        .navbar-toggle {
+          position: relative;
+          display: flex;
+          align-items: center;
+        }
+
+        .sidebar {
+          visibility: hidden;
+          position: fixed;
+          display: flex;
+          height: 100vh;
+          width: min(65vw, 350px);
+          padding: 50px 20px;
+          top: 0;
+          right: 0;
+          background-color: var(--bg-color);
+          box-shadow: var(--box-shadow);
+          z-index: 10;
+          overflow: hidden;
+          transform: translateX(0vw);
+          transition: var(--transition);
+        }
+      }
+
+    </style>
+  </head>
+    <body>
+        <header class="site-header">
+            <nav>
+              <div class="navbar">
+                <div class="navbar-logo">NavBar</div>
+                <div class="navbar-menu">
+                  <ul class="menu-list">
+                    <li class="menu-item"><a href="#">Blue</a></li>
+                    <li class="menu-item"><a href="#">Green</a></li>
+                    <li class="menu-item"><a href="#">Red</a></li>
+                    <li class="menu-item"><a href="#">Black</a></li>
+                    <li class="menu-item"><a href="#">White</a></li>
+                  </ul>
+                </div>
+                <div class="navbar-toggle">
+                  <button type="button" id="toggle-sidebar" class="toggle-button">
+                    <div class="hamburger hamburger-s"></div>
+                    <div class="hamburger hamburger-l"></div>
+                    <div class="hamburger hamburger-s"></div>
+                  </button>
+                </div>
+              </div>
+              <aside class="sidebar" id="sidebar">
+                <button type="button">X</button>
+                <nav>
+                  <div class="sidebar-menu">
+                    <ul class="sidebar-list">
+                      <li class="sidebar-item"><a href="#">Blue</a></li>
+                      <li class="sidebar-item"><a href="#">Green</a></li>
+                      <li class="sidebar-item"><a href="#">Red</a></li>
+                      <li class="sidebar-item"><a href="#">Black</a></li>
+                      <li class="sidebar-item"><a href="#">White</a></li>
+                    </ul>
+                  </div>
+                </nav>
+              </aside>
+            </nav>
+        </header>
+        <main>
+          <div class="content">Content Here</div>
+        </main>
+        <script>
+          document.getElementById("toggle-sidebar").addEventListener("click", openSidebar => {
+            let sideBar = document.getElementById("sidebar");
+            sideBar.style.visibility = "visible";
+          });
+        </script>
+    </body>
+</html>

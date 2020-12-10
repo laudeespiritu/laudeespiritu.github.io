@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NavBar</title>
+        <style>
+            :root {
+                --bg-color: #0b0b0f;
+                --ft-color: #f0f0f4;
+                --f-size: 1.2em;
+                --nav-height: 90px;
+            }
+
+            *, *::before, *::after {
+                box-sizing: border-box;
+            }
+
+            
+            body {
+                margin: 0px;
+            }
+
+            header {
+                background-color: var(--bg-color);
+                color: var(--ft-color);
+                display: flex;
+                position: fixed;
+                align-items: center;
+                top: 0px;
+                left: 0px;
+                margin: 0px;
+                width: 100%;
+                padding: 0px 2vw;
+                height: var(--nav-height);
+                z-index: 100;
+            }
+
+            .navbar {
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                z-index: 101;
+            }
+
+            .navbar-logo {
+                display: flex;
+                align-items: center;
+                font-size: var(--f-size);
+            }
+
+            .navbar-menu {
+                display: flex;
+                align-items: center;
+                font-size: var(--f-size);
+            }
+
+            .navbar-menu-item {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .navbar-menu li a {
+                text-decoration: none;
+                padding: 10px;
+                color: var(--ft-color);
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-logo">Navigation</div>
+                <div class="navbar-menu">
+                    <ul class="navbar-menu-item">
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="#">Work Experience</a></li>
+                        <li><a href="#">Tech & Tools</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </body>
+</html>

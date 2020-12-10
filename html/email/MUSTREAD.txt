@@ -1,0 +1,1 @@
+■ Always add text-align css properties on <td> to prevent alignment issues from email clients like Yahoo.
